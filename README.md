@@ -1,0 +1,1 @@
+This repo serves mainly as a backup for myself. I got most of these configurations from elsewhere.
