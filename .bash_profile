@@ -24,3 +24,6 @@ alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 
 # automatically trash instead of simply remove (using 'trash' from OSXTools)
 alias rm='trash'
+
+# use bash's vi mode
+set -o vi
