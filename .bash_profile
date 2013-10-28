@@ -19,22 +19,8 @@ export LANG="en_US"
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
-##
-# Your previous /Users/ryanordille/.bash_profile file was backed up as /Users/ryanordille/.bash_profile.macports-saved_2012-03-29_at_12:37:31
-##
-
-# MacPorts Installer addition on 2012-03-29_at_12:37:31: adding an appropriate PATH variable for use with MacPorts.
-#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
 # lock desktop
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 # automatically trash instead of simply remove (using 'trash' from OSXTools)
 alias rm='trash'
-
-debug_http () { /usr/bin/curl $@ -o /dev/null -w "name lookup: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
-
-#if [ ! `command -v figlet >/dev/null 2>&1` ]; then
-#    figlet -c Haters Gonna Hate
-#fi

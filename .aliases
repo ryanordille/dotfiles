@@ -17,16 +17,11 @@ alias undopush="git push -f origin HEAD^:master"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias whois="whois -h whois-servers.net"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Start an HTTP server from a directory
 alias server="open http://localhost:8080/ && python -m SimpleHTTPServer 8080"
@@ -51,9 +46,6 @@ alias v="vim"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-# Empty the Trash
-alias emptytrash="rm -rfv ~/.Trash"
-
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
@@ -72,7 +64,6 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-re
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 # open this folder in finder
 alias f='open -a Finder ./'
