@@ -107,5 +107,15 @@ function previewman {
     man -t $* | open -f -a Preview
 }
 
-# for Tymphany
-alias gerrit="git push origin master:refs/for/master"
+# make DOT/GraphViz and open in preview
+function makedot {
+    dot -Tpng $*.dot -o $*.png && open -a Preview $*.png
+}
+
+# for school - fall 2014
+alias f14='cd /Users/ryanordille/Dropbox/u4/fall2014'
+
+# dpm stuff
+export NXJ_HOME=/Users/ryanordille/Documents/leJOS_NXJ_0.9.1beta-3
+export PATH=$PATH:$NXJ_HOME
+
