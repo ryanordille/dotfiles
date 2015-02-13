@@ -4,9 +4,6 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
-# Enable the 2D Dock
-# defaults write com.apple.dock no-glass -bool true
-
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
@@ -45,7 +42,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.dock mouse-over-hilte-stack -bool true
 
 # Enable spring loading for all Dock items
-defaults write enable-spring-load-actions-on-all-items -bool true
+# defaults write enable-spring-load-actions-on-all-items -bool true
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
@@ -96,7 +93,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
+# defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 # Require password immediately after sleep or screen saver begins
 # defaults write com.apple.screensaver askForPassword -int 1
@@ -156,4 +153,32 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 # unset file
 
 # Kill affected applications
-for app in Safari Finder Dock Mail; do killall "$app"; done
+# for app in Safari Finder Dock Mail; do killall "$app"; done
+
+# Killing Animations
+# opening and closing windows and popovers
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+
+# showing and hiding sheets, resizing preference windows, zooming windows
+# float 0 doesn't work
+defaults write -g NSWindowResizeTime -float 0.001
+
+# opening and closing Quick Look windows
+defaults write -g QLPanelAnimationDuration -float 0
+
+# resizing windows before and after showing the version browser
+# also disabled by NSWindowResizeTime -float 0.001
+# defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
+
+# showing a toolbar or menu bar in full screen
+# defaults write -g NSToolbarFullScreenAnimationDuration -float 0
+
+# scrolling column views
+# defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0
+
+# showing the Dock
+# defaults write com.apple.dock autohide-time-modifier -float 0
+# defaults write com.apple.dock autohide-delay -float 0
+
+# showing and hiding Mission Control, command+numbers
+# defaults write com.apple.dock expose-animation-duration -float 0
