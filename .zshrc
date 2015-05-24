@@ -46,9 +46,6 @@ plugins=(git python osx)
 # oh-my-zsh stuff
 source $ZSH/oh-my-zsh.sh
 
-# my custom shiznit
-source $HOME/.aliases
-
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # bind up and down according to
@@ -70,3 +67,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # substring searching (not sure if working)
 source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# my custom shiznit
+source $HOME/.aliases
