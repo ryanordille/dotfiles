@@ -40,6 +40,6 @@ function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="\[\e[36;1m\]\u@\[\e[32;1m\]\w> \[\e[0m\]"
-#PS1="[\[${BOLD}${MAGENTA}\]\u][\[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)] \$ \[$RESET\]"
+#PS1="\[\e[36;1m\]\u@\[\e[32;1m\]\w> \[\e[0m\]"
+PS1="[\[${BOLD}${MAGENTA}\]\u][\[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)] \$ \[$RESET\]"
 #PS1="\e]2;\$(pwd)\a\e]1;\$(pwd)\a\e[31;1m\$(s=\$(printf "%*s" \$COLUMNS); echo \${s// /―})\n(\w)\e[0m "
